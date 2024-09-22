@@ -4,6 +4,7 @@
     "slug": "GlobeGuard",
     "version": "1.0.0",
     "orientation": "landscape",
+    "entryPoint": "./src/App.js",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
