@@ -1,15 +1,18 @@
 // app/GameScreen.jsx
 import React from 'react';
 import { View, ImageBackground, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
 import ImageButton from '../components/ImageButton';
 
 export default function GameScreen() {
+    const router = useRouter();  // Use the router to navigate
+
     return (
         <ImageBackground source={require('../assets/images/bangla-map.jpg')} style={styles.background}>
             <View style={styles.buttonContainer}>
                 <ImageButton
-                    source={require('../assets/images/globeBtn.png')}  // Corrected file extension
-                    onPress={() => { console.log('Button 1 pressed'); }}
+                    source={require('../assets/images/globeBtn.png')}
+                    onPress={() => { router.push('/VillageScreen'); }}  // Navigate to VillageScreen
                     style={styles.imageButton}
                 />
             </View>
@@ -19,14 +22,16 @@ export default function GameScreen() {
 
 const styles = StyleSheet.create({
     background: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    container: {
-      flex: 1,
+    buttonContainer: {
+        position: 'absolute',
+        bottom: 20,
+        right: 20,
     },
     imageButton: {
-      // Additional styles if needed
+        // Add your custom button styles here
     },
-  });
+});

@@ -15,7 +15,7 @@ export default function Index() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Image source={require('../assets/images/start.gif')} style={{ width: '100%', height: '100%' }} />
+      <Image source={require('../assets/images/loading.mp4')} style={{ width: '100%', height: '100%' }} />
     </View>
   );
 }
