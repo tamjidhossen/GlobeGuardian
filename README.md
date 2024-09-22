@@ -1,42 +1,50 @@
-# Globe Guardian 🌍🛡️  
-*NASA Space Apps Challenge 2024*
+# Welcome to your Expo app 👋
 
-**Globe Guardian** is a multiplayer educational game where players protect and strengthen regions in Bangladesh against natural disasters like floods using real NASA data. Through strategic planning, satellite insights, and community collaboration, the game teaches environmental resilience.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-### Features:
+## Get started
 
-- 🎮 **Game Character:**  
-  A customizable character that players can control to explore regions, collect resources, and help communities.  
-  ![Game Character](https://github.com/tamjidhossen/GlobeGuardian/blob/a20cf0f4aa5d9ef4bc10369d0b063649a145c26d/app/src/main/res/Assets/Asset%203%402x.png "Game Character Preview")
+1. Install dependencies
 
-- 🌏 **Interactive Map:**  
-  Explore and unlock regions, starting with one, and fortify it against floods using real-time satellite data and predictions.
+   ```bash
+   npm install
+   ```
 
-  **Country Map:**  
-  ![Country Map](./app/src/main/res/Assets/Asset%202@2x.png "Country Map Preview")
+2. Start the app
 
-  **Region Map:**  
-  ![Region Map](./app/src/main/res/Assets/Asset%201@2x.png "Region Map Preview")
+   ```bash
+    npx expo start
+   ```
 
+In the output, you'll find options to open the app in a
 
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-- 📊 **NASA Data:**  
-   Learn and adapt using environmental data from the **GLOBE Protocol** and satellites like **SENTINEL-1 SAR** to prepare for disasters.  
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-  ![NASA Data](./app/src/main/res/Assets/Asset%204@2x.png "NASA Data Preview")
+## Get a fresh project
 
-- 🛠️ **Game Store:**  
-  Purchase essential assets such as:
+When you're ready, run:
 
-  ![Store Assets](./app/src/main/res/Assets/Asset%201.png "Store Assets Preview")
+```bash
+npm run reset-project
+```
 
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+## Learn more
 
-- 🤝 **Multiplayer & Collaboration:**  
-  Chat with other communities, donate coins, share assets (like sandbags), and help build shared infrastructure like bridges and dams.  
+To learn more about developing your project with Expo, look at the following resources:
 
-  <img src="./app/src/main/res/Assets/Asset%2064%404x.png" alt="Chat Preview" width="200px"/>
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-*Developed by Team Cyborgs for NASA Space Apps Challenge 2024.*
-### Copyright Disclaimer:
-Some assets used in this game are sourced from [Freepik](https://www.freepik.com) and are royalty-free. NASA data is provided through the [GLOBE Protocol](https://www.globe.gov/) and includes satellite images from the [SAR satellites](https://earthobservatory.nasa.gov/features/SAR).
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
