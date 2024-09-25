@@ -15,6 +15,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ tabBarVisible: false }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="MapScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="SylhetRegion" options={{ headerShown: false }} />
       </Stack>
     </>
   );
