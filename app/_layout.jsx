@@ -11,10 +11,10 @@ export default function RootLayout() {
 
   return (
     <>
-      <StatusBar hidden />
+      <StatusBar hidden/>
       <Stack screenOptions={{ tabBarVisible: false }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="GameScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="MapScreen" options={{ headerShown: false }} />
       </Stack>
     </>
   );

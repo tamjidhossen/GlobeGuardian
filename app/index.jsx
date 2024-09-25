@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { Text, View, Image } from 'react-native';
 import { useRouter } from 'expo-router';
+// import 'react-native-gesture-handler';
 
 export default function Index() {
   const router = useRouter();
 
+  // game loading animation gif
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.push('/GameScreen');
+      router.push('/MapScreen');
     }, 2000); // Duration of the GIF in milliseconds
 
     return () => clearTimeout(timer);
