@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ImageBackground, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import ImageButton from '../components/ImageButton';
 import LevelButton from '../components/LevelButton';
+import GlobePopup from '../components/GlobePopup'; // Import GlobePopup
 
 const { width, height } = Dimensions.get('window');
 
 export default function MapScreen() {
+  const [isGlobePopupVisible, setGlobePopupVisible] = useState(false); // State for popup visibility
+
+  const openGlobePopup = () => {
+    setGlobePopupVisible(true); // Show the popup
+  };
+
+  const closeGlobePopup = () => {
+    setGlobePopupVisible(false); // Hide the popup
+  };
 
   return (
     <View style={styles.container}>
@@ -21,12 +31,15 @@ export default function MapScreen() {
       </ScrollView>
       
       <View style={styles.globeButtonContainer}>
+        {/* Globe button to open popup */}
         <ImageButton
           source={require('../assets/images/globeBtn.png')}
-          onPress={() => { console.log('Globe vis Button pressed'); }}
+          onPress={openGlobePopup}  // Open the popup on press
           style={styles.imageButton}
         />
       </View>
+      
+      {/* Progress bar */}
       <View style={styles.progressBarContainer}>
         <ImageBackground 
           source={require('../assets/images/progress-bar.png')} 
@@ -36,10 +49,16 @@ export default function MapScreen() {
         <LevelButton
           source={require('../assets/images/progress-bar-btn1.png')}
           onPress={() => { console.log('level1 pressed'); }}
-          style={styles.leve1Btn}
+          style={styles.level1Btn}
         />
       </View>
-      
+
+      {/* Globe popup modal */}
+      {isGlobePopupVisible && (
+        <GlobePopup 
+          closePopup={closeGlobePopup}  // Pass the close function to the popup
+        />
+      )}
     </View>
   );
 }
@@ -78,11 +97,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  leve1Btn: {
+  level1Btn: {
     position: 'absolute',  // Ensure this is absolutely positioned
     top: 10,  // Adjust this value to fine-tune alignment with the button in the progress bar
     left: '19.7%',  // Adjust the horizontal alignment to match the first button
-    zIndex: 1,  // Ensure it's on top of other components
     backgroundColor: 'transparent' // Make sure there's no conflicting background
   }
 });
