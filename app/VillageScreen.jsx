@@ -11,7 +11,6 @@ export default function VillageScreen() {
     'Let\'s get started with the first task.'
   ];
 
-  // Show the first message after 1 second when the screen loads
   useEffect(() => {
     const timer = setTimeout(() => {
       setMessageIndex(0);
@@ -28,13 +27,16 @@ export default function VillageScreen() {
     }
   };
 
+  const handleSkip = () => {
+    setModalVisible(false); // Close the modal immediately when skip is pressed
+  };
+
   return (
     <ImageBackground 
       source={require('../assets/images/village-1.png')} 
       style={styles.background}
       resizeMode="cover"
     >
-      <StatusBar hidden />
       <View style={styles.container}>
         {/* Modal for showing the messages */}
         <Modal
@@ -44,12 +46,24 @@ export default function VillageScreen() {
           onRequestClose={() => setModalVisible(false)} // Required for Android back button
         >
           <View style={styles.modalOverlay}>
-            <View style={styles.modalContent}>
+            <ImageBackground
+              source={require('../assets/images/dialog-box.png')} // Dialog box image
+              style={styles.modalContent}
+              resizeMode="contain" // Ensure the image fits properly
+            >
               <Text style={styles.messageText}>{messages[messageIndex]}</Text>
-              <TouchableOpacity onPress={handleNextMessage} style={styles.nextButton}>
-                <Text style={styles.nextButtonText}>Next</Text>
-              </TouchableOpacity>
-            </View>
+
+              {/* Buttons positioned in the bottom-right corner */}
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={handleNextMessage} style={styles.nextButton}>
+                  <Text style={styles.nextButtonText}>Next</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
+                  <Text style={styles.skipButtonText}>Skip</Text>
+                </TouchableOpacity>
+              </View>
+            </ImageBackground>
           </View>
         </Modal>
       </View>
@@ -74,22 +88,43 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     width: 300,
-    padding: 20,
-    backgroundColor: '#fff',
-    borderRadius: 10,
+    height: 200, // Adjust this to fit the dialog-box.png
+    justifyContent: 'center',
     alignItems: 'center',
+    right:70,
+    top:-60,
+    padding: 20, // Adds padding around the content
   },
   messageText: {
     fontSize: 18,
     marginBottom: 20,
     textAlign: 'center',
+    color: '#000', // Text color
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: -103, // Position the buttons 10 pixels from the bottom of the modal
+    right: -278,  // Position the buttons 10 pixels from the right of the modal
+    flexDirection: 'row', // Arrange buttons in a row
+    margin: 0,
+    width: 150,  // Adjust the width for the two buttons
   },
   nextButton: {
     backgroundColor: '#4CAF50',
     padding: 10,
     borderRadius: 5,
+    marginRight: 10, // Add some spacing between the "Next" and "Skip" buttons
   },
   nextButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  skipButton: {
+    backgroundColor: '#f44336', // Red for the skip button
+    padding: 10,
+    borderRadius: 5,
+  },
+  skipButtonText: {
     color: '#fff',
     fontSize: 16,
   },

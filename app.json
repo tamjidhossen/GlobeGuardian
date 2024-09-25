@@ -3,7 +3,11 @@
     "name": "Globe Guardian",
     "slug": "GlobeGuardian",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
+    "androidStatusBar": {
+      "hidden": true,   
+      "translucent": false
+    },
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
@@ -19,6 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "statusBar": {
+        "hidden": true    
       }
     },
     "web": {
