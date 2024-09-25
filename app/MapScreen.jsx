@@ -68,14 +68,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContainer: {
-    width: width,
+    width: height,
     height: 1000, // Height of the map image
     justifyContent: 'center',
     alignItems: 'center',
   },
   background: {
     flex: 1,
-    width: width,
+    height: 1000,
+    width: height,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
     position: 'absolute',  // Ensure this is absolutely positioned
     top: 10,  // Adjust this value to fine-tune alignment with the button in the progress bar
     left: '19.7%',  // Adjust the horizontal alignment to match the first button
+    // zIndex: 1,  // Ensure it's on top of other components
     backgroundColor: 'transparent' // Make sure there's no conflicting background
   }
 });

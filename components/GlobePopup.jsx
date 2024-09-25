@@ -50,8 +50,8 @@ export default function GlobePopup({ closePopup }) {
             {/* <Text style={styles.buttonText}>Hydrosphere</Text> */}
           </TouchableOpacity>
 
-          {/* Lithosphere button */}
-          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Lithosphere pressed')}>
+          {/* Pedosphere button */}
+          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Pedosphere pressed')}>
             <Image 
               source={require('../assets/images/pedosphere-sec.png')} 
               style={styles.image}
@@ -69,15 +69,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: width,
-    height: height,
+    width: height,
+    height: width,
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black overlay
     justifyContent: 'center',
     alignItems: 'center',
   },
   popupContainer: {
-    width: width * 0.9,
-    height: height * 0.8,
+    width: height * 0.9,
+    height: width * 0.8,
     backgroundColor: '#8B4513', // Brown background as per your design
     borderRadius: 20,
     borderWidth: 5,
