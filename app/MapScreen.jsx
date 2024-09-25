@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   leve1Btn: {
     position: 'absolute',  // Ensure this is absolutely positioned
     top: 10,  // Adjust this value to fine-tune alignment with the button in the progress bar
-    left: '19.5%',  // Adjust the horizontal alignment to match the first button
+    left: '19.7%',  // Adjust the horizontal alignment to match the first button
     zIndex: 1,  // Ensure it's on top of other components
     backgroundColor: 'transparent' // Make sure there's no conflicting background
   }

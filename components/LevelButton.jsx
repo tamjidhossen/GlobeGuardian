@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
       // alignItems: 'center',
     },
     image: {
-      width: 70, // Adjust the width as needed
-      height: 70, // Adjust the height as needed
+      width: 65, // Adjust the width as needed
+      height: 65, // Adjust the height as needed
       resizeMode: "contain",
       // backgroundColor: "red"
     },
