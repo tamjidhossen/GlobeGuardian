@@ -3,6 +3,7 @@ import { StatusBar } from "react-native";
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useEffect } from 'react';
 
+import SylhetRegionMain from './SylhetRegionMain';
 export default function RootLayout() {
   useEffect(() => {
     // Lock the screen orientation to landscape
@@ -16,7 +17,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="MapScreen" options={{ headerShown: false }} />
         <Stack.Screen name="SylhetRegion" options={{ headerShown: false }} />
-        <Stack.Screen name="VillageScreen" options={{ headerShown: false }}/>
+        <Stack.Screen name="SylhetRegionMain" options={{ headerShown: false }} />
       </Stack>
     </>
   );

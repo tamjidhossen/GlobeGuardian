@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Modal, TouchableOpacity, ImageBackground, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';  // Import useNavigation hook
 
 export default function VillageScreen() {
+  const navigation = useNavigation();  // Initialize the navigation hook
   const [modalVisible, setModalVisible] = useState(true);
   const [messageIndex, setMessageIndex] = useState(0);
 
@@ -24,11 +26,13 @@ export default function VillageScreen() {
       setMessageIndex(messageIndex + 1);
     } else {
       setModalVisible(false); // Close the modal after the last message
+      navigation.navigate('SylhetRegionMain'); // Navigate to VillageScreen-1 after all messages are read
     }
   };
 
   const handleSkip = () => {
     setModalVisible(false); // Close the modal immediately when skip is pressed
+    navigation.navigate('SylhetRegionMain'); // Navigate to VillageScreen-1 immediately when skipped
   };
 
   return (
