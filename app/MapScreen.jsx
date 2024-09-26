@@ -54,6 +54,7 @@ const handleLevel1Press = () => {
           resizeMode="cover"
         />
       )}
+      
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
@@ -105,15 +106,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContainer: {
-    width: height,
+    width: width, // Full width of the screen in landscape mode
     height: 1000, // Height of the map image
     justifyContent: "center",
     alignItems: "center",
   },
   background: {
     flex: 1,
-    height: 430,
-    width: height,
+    height: 1030, // Adjust as needed for your map's height
+    width: width,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
   level1Btn: {
     position: "absolute", // Ensure this is absolutely positioned
     top: 10, // Adjust this value to fine-tune alignment with the button in the progress bar
-    left: "19.7%", // Adjust the horizontal alignment to match the first button
+    left: "16.7%", // Adjust the horizontal alignment to match the first button
     // zIndex: 1,  // Ensure it's on top of other components
     backgroundColor: "transparent", // Make sure there's no conflicting background
   },
