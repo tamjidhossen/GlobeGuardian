@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Modal, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import {router} from 'expo-router';
+import {Image, View, Text, Modal, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';  // Import useNavigation hook
 
 export default function VillageScreen() {
@@ -66,6 +67,12 @@ export default function VillageScreen() {
                 <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
                   <Text style={styles.skipButtonText}>Skip</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => {router.push('/dataShow');}}>
+              <Image
+                source={require('../assets/images/globeBtn.png')}
+                style={styles.imageButton}
+              />
+            </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
@@ -132,4 +139,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
+  dataButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+},
 });
