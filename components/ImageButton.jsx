@@ -17,10 +17,12 @@ const styles = StyleSheet.create({
       right: 20,  // Adjust the distance from the right as needed
       justifyContent: 'center',
       alignItems: 'center',
+      backfaceVisibility: 'hidden',
     },
     image: {
       width: 150, // Adjust the width as needed
-      height: 150, // Adjust the height as needed
+      height: 50, // Adjust the height as needed
       resizeMode: 'contain',
+      // backgroundColor: 'red',
     },
   });
