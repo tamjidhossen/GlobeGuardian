@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     width: 150,  // Adjust the width for the two buttons
   },
   nextButton: {
-    backgroundColor: '#4CAF50',
+    
     padding: 10,
     borderRadius: 5,
     marginRight: 10, // Add some spacing between the "Next" and "Skip" buttons
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   skipButton: {
-    backgroundColor: '#f44336', // Red for the skip button
+    
     padding: 10,
     borderRadius: 5,
   },
