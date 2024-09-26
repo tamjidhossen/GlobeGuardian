@@ -105,6 +105,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  modalContainer: {
+    flex: 1,
+    width: width,  // Full width of the screen
+    height: height, // Full height of the screen
+    justifyContent: "center", // Center content vertically
+    alignItems: "center",  // Center content horizontally
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+  },
   scrollContainer: {
     width: width, // Full width of the screen in landscape mode
     height: 1000, // Height of the map image
@@ -140,8 +148,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width: height, // Full width
-    height: width, // Full height
+    width:width,
+    height: height, // Full height
     zIndex: 1, // Ensure it's above all other elements
     backgroundColor: "transparent", // Make sure no unwanted background shows
   },

@@ -10,11 +10,11 @@ export default function GlobePopup({ closePopup }) {
       <View style={styles.popupContainer}>
         {/* Close button */}
         <TouchableOpacity style={styles.closeButton} onPress={closePopup}>
-            <View style={styles.closeCircle}>
-                <Text style={styles.closeText}>X</Text>
-            </View>
+          <View style={styles.closeCircle}>
+            <Text style={styles.closeText}>X</Text>
+          </View>
         </TouchableOpacity>
-        
+
         {/* Popup title */}
         <Text style={styles.title}>GLOBE Visualization System</Text>
 
@@ -26,7 +26,6 @@ export default function GlobePopup({ closePopup }) {
               source={require('../assets/images/atmosphere-sec.png')} 
               style={styles.image}
             />
-            {/* <Text style={styles.buttonText}>Atmosphere</Text> */}
           </TouchableOpacity>
 
           {/* Biosphere button */}
@@ -35,7 +34,6 @@ export default function GlobePopup({ closePopup }) {
               source={require('../assets/images/biosphere-sec.png')} 
               style={styles.image}
             />
-            {/* <Text style={styles.buttonText}>Biosphere</Text> */}
           </TouchableOpacity>
         </View>
 
@@ -47,7 +45,6 @@ export default function GlobePopup({ closePopup }) {
               source={require('../assets/images/hydrosphere-sec.png')} 
               style={styles.image}
             />
-            {/* <Text style={styles.buttonText}>Hydrosphere</Text> */}
           </TouchableOpacity>
 
           {/* Pedosphere button */}
@@ -56,7 +53,6 @@ export default function GlobePopup({ closePopup }) {
               source={require('../assets/images/pedosphere-sec.png')} 
               style={styles.image}
             />
-            {/* <Text style={styles.buttonText}>Pedosphere</Text> */}
           </TouchableOpacity>
         </View>
       </View>
@@ -69,15 +65,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: height,
-    height: width,
+    width: width > height ? width : height,  // Ensure full width is covered
+    height: width > height ? height : width,  // Ensure full height is covered
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black overlay
     justifyContent: 'center',
     alignItems: 'center',
   },
   popupContainer: {
-    width: height * 0.9,
-    height: width * 0.8,
+    width: '90%', // Make the container take 90% of the screen width
+    height: '80%', // Make the container take 80% of the screen height
     backgroundColor: '#8B4513', // Brown background as per your design
     borderRadius: 20,
     borderWidth: 5,
@@ -106,10 +102,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
-    fontWeight: 'bold',
     marginBottom: 20,
   },
   buttonRow: {
@@ -124,14 +119,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 5,
-    // backgroundColor: 'white',
-
   },
   image: {
     width: 200,  // Adjust this size as necessary
     height: 100, // Adjust this size as necessary
     resizeMode: 'contain',
-    // backgroundColor: 'red',
   },
   buttonText: {
     fontSize: 16,
