@@ -19,6 +19,8 @@ export default function RootLayout() {
         <Stack.Screen name="SylhetRegion" options={{ headerShown: false }} />
         <Stack.Screen name="dataShow" options={{ headerShown: false }} />
         <Stack.Screen name="SylhetRegionMain" options={{ headerShown: false }} />
+        <Stack.Screen name="assetShow" options={{ headerShown: false }} />
+        
         
       </Stack>
     </>

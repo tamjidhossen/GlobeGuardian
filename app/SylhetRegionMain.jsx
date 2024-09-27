@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     left:450,
     bold:true,
     fontSize:25,
-    color:'#fff',
+    color:'#eee',
     fontWeight: 'bold',
     // fontFamily:'Kavoon-Regular',
     },

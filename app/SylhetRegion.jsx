@@ -11,7 +11,7 @@ export default function VillageScreen() {
   const [showCloudEndTransition, setShowCloudEndTransition] = useState(true); // State for showing cloud transition
 
   const messages = [
-    'Welcome to the village!\n this region in northeastern Bangladesh is famous for its beautiful green hills and rolling landscapes',
+    'Welcome to the village!\nThis region in northeastern Bangladesh is famous for its beautiful green hills and rolling landscapes',
     'Sylhet has a subtropical highland climate. You can expect heavy rains during the monsoon.',
     'But watch out! Sylhet is prone to flooding and landslides, especially during the rainy season.'
   ];
@@ -133,10 +133,11 @@ const styles = StyleSheet.create({
     padding: 20, // Adds padding around the content
   },
   messageText: {
-    fontSize: 18,
+    fontSize: 15,
     marginBottom: 20,
-    textAlign: 'center',
-    color: '#000', // Text color
+    padding:15,
+    textAlign: 'left',
+    color: '#212', // Text color
   },
   buttonContainer: {
     position: 'absolute',
