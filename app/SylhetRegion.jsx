@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Image, View, Text, Modal, Dimensions, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { router, useRouter } from 'expo-router';
 
 
 const { width, height } = Dimensions.get("window");
 export default function VillageScreen() {
   const navigation = useNavigation();
+  const router = useRouter();
   const [modalVisible, setModalVisible] = useState(false); // Initial state for modal visibility
   const [messageIndex, setMessageIndex] = useState(0);
   const [showCloudEndTransition, setShowCloudEndTransition] = useState(true); // State for showing cloud transition
