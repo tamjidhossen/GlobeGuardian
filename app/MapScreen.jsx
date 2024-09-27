@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import {
   View,
   Image,
@@ -16,7 +16,7 @@ const { width, height } = Dimensions.get("window");
 
 export default function MapScreen() {
   const [isGlobePopupVisible, setGlobePopupVisible] = useState(false); // State for popup visibility
-  const [showCloudTransition, setShowCloudTransition] = useState(false); // For animation
+  const [showCloudTransition, setShowCloudTransition] = useState(false); // Show GIF state
   const router = useRouter(); // Initialize the router
 
   const openGlobePopup = () => {
@@ -28,33 +28,35 @@ export default function MapScreen() {
   };
 
   // In your MapScreen component where you are navigating:
-const handleLevel1Press = () => {
-  setShowCloudTransition(true); // Show cloud transition
+  const handleLevel1Press = () => {
+    setShowCloudTransition(true); // Show cloud transition GIF
 
-  // Simulate cloud transition time (2 seconds), then navigate
-  setTimeout(() => {
-    setShowCloudTransition(false); // Hide cloud transition
-    router.push({
-      pathname: "/SylhetRegion", 
-      params: {}, // If you have params to pass
-      options: {
-        animation: 'none', // Disable the transition animation
-      },
-    });
-  }, 500); // Adjust the duration for your cloud animation
-};
+    // Simulate the GIF playtime (2 seconds or the duration of your GIF)
+    setTimeout(() => {
+      setShowCloudTransition(false); // Hide the GIF after transition
+      router.push({
+        pathname: "/SylhetRegion", 
+        params: {}, // If you have params to pass
+        options: {
+          animation: 'none', // Disable the transition animation
+        },
+      });
+    }, 500); // Adjust this timeout to match the GIF duration
+  };
 
   return (
     <>
-      {/* Cloud transition overlay */}
+      {/* Cloud transition GIF overlay */}
       {showCloudTransition && (
-        <Image
-          source={require("../assets/gifs/cloud-transition-start.gif")}
-          style={styles.cloudTransition} // Full-screen style
-          resizeMode="cover"
-        />
+        <View style={styles.cloudTransition}>
+          <Image
+            source={require("../assets/gifs/cloud-transition-start.gif")} // Use your transition GIF here
+            style={styles.cloudImage}
+            resizeMode="cover"
+          />
+        </View>
       )}
-      
+
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
@@ -85,7 +87,7 @@ const handleLevel1Press = () => {
           />
           <LevelButton
             source={require("../assets/images/progress-bar-btn1.png")}
-            onPress={handleLevel1Press}
+            onPress={handleLevel1Press} // Trigger GIF and navigation on press
             style={styles.level1Btn}
           />
         </View>
@@ -104,14 +106,6 @@ const handleLevel1Press = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  modalContainer: {
-    flex: 1,
-    width: width,  // Full width of the screen
-    height: height, // Full height of the screen
-    justifyContent: "center", // Center content vertically
-    alignItems: "center",  // Center content horizontally
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
   },
   scrollContainer: {
     width: width, // Full width of the screen in landscape mode
@@ -148,16 +142,21 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width:width,
+    width: width,
     height: height, // Full height
     zIndex: 1, // Ensure it's above all other elements
     backgroundColor: "transparent", // Make sure no unwanted background shows
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cloudImage: {
+    width: width,
+    height: height,
   },
   level1Btn: {
     position: "absolute", // Ensure this is absolutely positioned
     top: 10, // Adjust this value to fine-tune alignment with the button in the progress bar
     left: "16.7%", // Adjust the horizontal alignment to match the first button
-    // zIndex: 1,  // Ensure it's on top of other components
     backgroundColor: "transparent", // Make sure there's no conflicting background
   },
 });

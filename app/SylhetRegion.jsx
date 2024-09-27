@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import {router} from 'expo-router';
-import {Image, View, Text, Modal, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';  // Import useNavigation hook
+import { Image, View, Text, Modal, Dimensions, TouchableOpacity, ImageBackground, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+
+const { width, height } = Dimensions.get("window");
 export default function VillageScreen() {
-  const navigation = useNavigation();  // Initialize the navigation hook
-  const [modalVisible, setModalVisible] = useState(true);
+  const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false); // Initial state for modal visibility
   const [messageIndex, setMessageIndex] = useState(0);
+  const [showCloudEndTransition, setShowCloudEndTransition] = useState(true); // State for showing cloud transition
 
   const messages = [
     'Welcome to the village!',
@@ -15,11 +17,21 @@ export default function VillageScreen() {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setMessageIndex(0);
-      setModalVisible(true);
-    }, 1000);
-    return () => clearTimeout(timer); // Clear the timer on component unmount
+    // Show the cloud transition for 1 second
+    const cloudTransitionTimer = setTimeout(() => {
+      setShowCloudEndTransition(false); // Hide the cloud transition after 1 second
+
+      // After an additional 500ms, show the modal
+      const modalTimer = setTimeout(() => {
+        setModalVisible(true);
+      }, 500);
+
+      // Clear the modal timer on cleanup
+      return () => clearTimeout(modalTimer);
+    }, 10);
+
+    // Clear the cloud transition timer on cleanup
+    return () => clearTimeout(cloudTransitionTimer);
   }, []);
 
   const handleNextMessage = () => {
@@ -27,13 +39,13 @@ export default function VillageScreen() {
       setMessageIndex(messageIndex + 1);
     } else {
       setModalVisible(false); // Close the modal after the last message
-      navigation.navigate('SylhetRegionMain'); // Navigate to VillageScreen-1 after all messages are read
+      navigation.navigate('SylhetRegionMain'); // Navigate after all messages are read
     }
   };
 
   const handleSkip = () => {
     setModalVisible(false); // Close the modal immediately when skip is pressed
-    navigation.navigate('SylhetRegionMain'); // Navigate to VillageScreen-1 immediately when skipped
+    navigation.navigate('SylhetRegionMain'); // Navigate immediately when skipped
   };
 
   return (
@@ -43,6 +55,18 @@ export default function VillageScreen() {
       resizeMode="cover"
     >
       <View style={styles.container}>
+        {/* Show the cloud transition ending GIF if the state is true */}
+        {showCloudEndTransition && (
+          <Image
+            source={require("../assets/gifs/cloud-transition-end.gif")}
+            style={styles.cloudTransition}
+            resizeMode="cover"
+          />
+        )}
+
+        {/* Main content of the page, only show if cloud transition has ended */}
+        
+
         {/* Modal for showing the messages */}
         <Modal
           transparent={true}
@@ -52,9 +76,9 @@ export default function VillageScreen() {
         >
           <View style={styles.modalOverlay}>
             <ImageBackground
-              source={require('../assets/images/dialog-box.png')} // Dialog box image
+              source={require('../assets/images/dialog-box.png')}
               style={styles.modalContent}
-              resizeMode="contain" // Ensure the image fits properly
+              resizeMode="contain"
             >
               <Text style={styles.messageText}>{messages[messageIndex]}</Text>
 
@@ -67,12 +91,13 @@ export default function VillageScreen() {
                 <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
                   <Text style={styles.skipButtonText}>Skip</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => {router.push('/dataShow');}}>
-              <Image
-                source={require('../assets/images/globeBtn.png')}
-                style={styles.imageButton}
-              />
-            </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => { navigation.navigate('dataShow'); }}>
+                  <Image
+                    source={require('../assets/images/nasaDataBtn.png')}
+                    style={styles.imageButton}
+                  />
+                </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
@@ -102,8 +127,8 @@ const styles = StyleSheet.create({
     height: 200, // Adjust this to fit the dialog-box.png
     justifyContent: 'center',
     alignItems: 'center',
-    right:70,
-    top:-60,
+    right: 70,
+    top: -60,
     padding: 20, // Adds padding around the content
   },
   messageText: {
@@ -114,34 +139,43 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: -103, // Position the buttons 10 pixels from the bottom of the modal
-    right: -278,  // Position the buttons 10 pixels from the right of the modal
-    flexDirection: 'row', // Arrange buttons in a row
+    bottom: 38, // Position the buttons 10 pixels from the bottom of the modal
+    right: -40, // Position the buttons 10 pixels from the right of the modal
+    flexDirection: 'row',
     margin: 0,
-    width: 150,  // Adjust the width for the two buttons
+    width: 150,
   },
   nextButton: {
-    
     padding: 10,
     borderRadius: 5,
-    marginRight: 10, // Add some spacing between the "Next" and "Skip" buttons
   },
   nextButtonText: {
     color: '#fff',
     fontSize: 16,
   },
   skipButton: {
-    
     padding: 10,
     borderRadius: 5,
   },
   skipButtonText: {
-    color: '#fff',
+    color: '#542e31',
     fontSize: 16,
   },
-  dataButton: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-},
+  imageButton: {
+    top: 140,
+    left: 120,
+  },
+  cloudTransition: {
+
+    top: 0,
+    left: 0,
+    width:width,
+    height: height, // Full height
+    zIndex: 1, // Ensure it's above all other elements
+  },
+  text: {
+    fontSize: 24,
+    color: '#000',
+    fontWeight: 'bold',
+  },
 });

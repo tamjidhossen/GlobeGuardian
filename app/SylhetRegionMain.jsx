@@ -7,29 +7,30 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Animated, PanR
 } from 'react-native'; 
 
 export default function Home() {
-  const [pan] = useState(new Animated.ValueXY());
+//   const [pan] = useState(new Animated.ValueXY());
 
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: () => true,
-    onPanResponderGrant: () => {
-      pan.setOffset({
-        x: pan.x._value,
-        y: pan.y._value,
-      });
-      pan.setValue({ x: 0, y: 0 });
-    },
-    onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], {
-      useNativeDriver: false,
-    }),
-    onPanResponderRelease: () => {
-      pan.flattenOffset();
-    },
-  });
+//   const panResponder = PanResponder.create({
+//     onMoveShouldSetPanResponder: () => true,
+//     onPanResponderGrant: () => {
+//       pan.setOffset({
+//         x: pan.x._value,
+//         y: pan.y._value,
+//       });
+//       pan.setValue({ x: 0, y: 0 });
+//     },
+//     onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], {
+//       useNativeDriver: false,
+//     }),
+//     onPanResponderRelease: () => {
+//       pan.flattenOffset();
+//     },
+//   });
 
   const screenWidth = Dimensions.get('window').width; // Get device width
 
   return (
     <View style={styles.container}>
+      
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
           showsVerticalScrollIndicator={false}
@@ -40,7 +41,7 @@ export default function Home() {
             resizeMode="cover"
           />
         </ScrollView>
-      <Animated.View
+      {/* <Animated.View
         {...panResponder.panHandlers}
         style={[pan.getLayout(), styles.imageContainer]}
       >
@@ -48,7 +49,8 @@ export default function Home() {
           source={require('../assets/images/water-resovoir.png')}
           style={styles.image}
         />
-      </Animated.View>
+      </Animated.View> */}
+      
       <View style={styles.assetButton}>
         <TouchableOpacity onPress={() => { router.push('/assetShow'); }} style={styles.shopButton}>
           <Image
@@ -56,7 +58,37 @@ export default function Home() {
           />
         </TouchableOpacity>
       </View>
+      <View style={styles.assetButton}>
+          <Image
+            source={require('../assets/images/village-progress-bar.png')}
+            style={styles.progessBar}
+          />
+      </View>
+      <View style={styles.assetButton}>
+          <Image
+            source={require('../assets/images/coin-board.png')}
+            style={styles.coinBoard}
+          />
+          <Text style={styles.coinBoardText}>500</Text>
+      </View>
+      <View style={styles.assetButton}>
+        <TouchableOpacity >
+          <Image
+            source={require('../assets/images/community-icon.png')}
+            style={styles.communityIcon}
+          />
+        </TouchableOpacity>  
+      </View>
+      <View style={styles.assetButton}>
+       <TouchableOpacity >
+          <Image
+            source={require('../assets/images/home-icon.png')}
+            style={styles.homeIcon}
+          />
+        </TouchableOpacity>    
+      </View>
     </View>
+
   );
 }
 
@@ -89,4 +121,29 @@ const styles = StyleSheet.create({
     left: 470,
     
   },
+  progessBar:{
+    bottom: 272,
+    right:170,
+  },
+  communityIcon:{
+    right:170,
+    bottom:50,
+  },
+  homeIcon:{
+    right:170,
+    top:10,
+  },
+  coinBoard:{
+    bottom:230,
+    left:400,
+  },
+  coinBoardText:{
+    bottom:295,
+    left:450,
+    bold:true,
+    fontSize:25,
+    color:'#fff',
+    
+  },
+
 });
