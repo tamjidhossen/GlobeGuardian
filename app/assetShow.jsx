@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     elevation: 3, // Adds shadow for Android
   },
   image: {
-    width: 120,
-    height: 120,
+    width: 140,
+    height: 140,
     resizeMode: 'contain',
   },
   row: {
