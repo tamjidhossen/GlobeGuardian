@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { router } from 'expo-router';
+import * as Font from 'expo-font';
 import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Animated, PanResponder,
     ImageBackground,
     ScrollView,
@@ -7,6 +8,17 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Animated, PanR
 } from 'react-native'; 
 
 export default function Home() {
+  // const [fontLoaded, setFontLoaded] = useState(false);
+  // useEffect(() => {
+  //   async function loadFont() {
+  //     await Font.loadAsync({
+  //       'Kavoon-Regular': require('../assets/fonts/Kavoon-Regular.ttf'),
+  //     });
+  //     setFontLoaded(true);
+  //   }
+
+  //   loadFont();
+  // }, []);
 //   const [pan] = useState(new Animated.ValueXY());
 
 //   const panResponder = PanResponder.create({
@@ -64,6 +76,7 @@ export default function Home() {
             style={styles.progessBar}
           />
       </View>
+      
       <View style={styles.assetButton}>
           <Image
             source={require('../assets/images/coin-board.png')}
@@ -143,7 +156,8 @@ const styles = StyleSheet.create({
     bold:true,
     fontSize:25,
     color:'#fff',
-    
-  },
+    fontWeight: 'bold',
+    // fontFamily:'Kavoon-Regular',
+    },
 
 });

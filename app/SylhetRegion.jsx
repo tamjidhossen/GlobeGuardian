@@ -11,9 +11,9 @@ export default function VillageScreen() {
   const [showCloudEndTransition, setShowCloudEndTransition] = useState(true); // State for showing cloud transition
 
   const messages = [
-    'Welcome to the village!',
-    'Here, you can build and explore.',
-    'Let\'s get started with the first task.'
+    'Welcome to the village!\n this region in northeastern Bangladesh is famous for its beautiful green hills and rolling landscapes',
+    'Sylhet has a subtropical highland climate. You can expect heavy rains during the monsoon.',
+    'But watch out! Sylhet is prone to flooding and landslides, especially during the rainy season.'
   ];
 
   useEffect(() => {
@@ -92,11 +92,12 @@ export default function VillageScreen() {
                   <Text style={styles.skipButtonText}>Skip</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => { navigation.navigate('dataShow'); }}>
+                <TouchableOpacity onPress={() => router.push('/dataShow')}>
                   <Image
                     source={require('../assets/images/nasaDataBtn.png')}
                     style={styles.imageButton}
                   />
+                
                 </TouchableOpacity>
               </View>
             </ImageBackground>
