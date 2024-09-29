@@ -47,7 +47,7 @@ export default function AssetShow() {
         data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        numColumns={3}  // Set number of columns to 3
+        numColumns={4}  // Set number of columns to 4
         columnWrapperStyle={styles.row}
         contentContainerStyle={styles.contentContainer} // Add some padding to the content
       />
@@ -86,11 +86,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background for items
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowOffset: { width: 0, height: 1 },
-    elevation: 3, // Adds shadow for Android
+    backgroundColor: '#4f2f0b', // Semi-transparent background for items
+    
+    
+    //elevation: 1, // Adds shadow for Android
   },
   image: {
     width: 140,

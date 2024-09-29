@@ -245,8 +245,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   popupContainer: {
-    width: height * 0.9,
-    height: width * 0.8,
+    width: width * 0.9,
+    height: height * 0.8,
     backgroundColor: "#8B4513",
     borderRadius: 20,
     borderWidth: 5,
