@@ -50,6 +50,7 @@ export default function AssetShow() {
         numColumns={4}  // Set number of columns to 4
         columnWrapperStyle={styles.row}
         contentContainerStyle={styles.contentContainer} // Add some padding to the content
+        scrollEnabled={false}
       />
     </View>
   );
@@ -59,20 +60,21 @@ export default function AssetShow() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 22,
+    paddingTop:0,
     backgroundColor: '#8B4513',
   },
   headerBar: {
     width: '100%',
-    height: 60,
+    height: 45,
     backgroundColor: '#402108', // Darker shade for the header
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
+
     shadowColor: '#000',
     shadowOpacity: 0.3,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 5, // Adds a drop shadow for Android
+    shadowOffset: { width: 0, height: 0 },
+    elevation: 1, // Adds a drop shadow for Android
   },
   headerText: {
     fontSize: 32, // Slightly smaller for a modern look
