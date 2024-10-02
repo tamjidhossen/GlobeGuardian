@@ -183,51 +183,10 @@ export default function GlobePopup({ closePopup }) {
           <View style={styles.closeCircle}>
             <Text style={styles.closeText}>X</Text>
           </View>
-          <View style={styles.closeCircle}>
-            <Text style={styles.closeText}>X</Text>
-          </View>
         </TouchableOpacity>
 
-        {/* Popup title */}
-        <Text style={styles.title}>GLOBE Visualization System</Text>
-
-        {/* 1st Row of buttons */}
-        <View style={styles.buttonRow}>
-          {/* Atmosphere button */}
-          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Atmosphere pressed')}>
-            <Image 
-              source={require('../assets/images/atmosphere-sec.png')} 
-              style={styles.image}
-            />
-          </TouchableOpacity>
-
-          {/* Biosphere button */}
-          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Biosphere pressed')}>
-            <Image 
-              source={require('../assets/images/biosphere-sec.png')} 
-              style={styles.image}
-            />
-          </TouchableOpacity>
-        </View>
-
-        {/* Second row of buttons */}
-        <View style={styles.buttonRow}>
-          {/* Hydrosphere button */}
-          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Hydrosphere pressed')}>
-            <Image 
-              source={require('../assets/images/hydrosphere-sec.png')} 
-              style={styles.image}
-            />
-          </TouchableOpacity>
-
-          {/* Pedosphere button */}
-          <TouchableOpacity style={styles.imageButton} onPress={() => console.log('Pedosphere pressed')}>
-            <Image 
-              source={require('../assets/images/pedosphere-sec.png')} 
-              style={styles.image}
-            />
-          </TouchableOpacity>
-        </View>
+        {/* Render dynamic content based on the popup state */}
+        {renderPopupContent()}
       </View>
     </View>
   );
@@ -238,11 +197,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    width: width > height ? width : height,  // Ensure full width is covered
-    height: width > height ? height : width,  // Ensure full height is covered
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black overlay
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: width,
+    height: height,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
   },
   popupContainer: {
     width: width * 0.9,

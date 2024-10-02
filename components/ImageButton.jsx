@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
       backfaceVisibility: 'hidden',
     },
     image: {
-      width: 150, // Adjust the width as needed
-      height: 50, // Adjust the height as needed
+      width: 300, // Adjust the width as needed
+      height: 60, // Adjust the height as needed
       resizeMode: 'contain',
       // backgroundColor: 'red',
     },

@@ -72,7 +72,7 @@ export default function MapScreen() {
         <View style={styles.globeButtonContainer}>
           {/* Globe button to open popup */}
           <ImageButton
-            source={require("../assets/images/globeBtn.png")}
+            source={require("../assets/images/globe-visualizatio-btn.png")}
             onPress={openGlobePopup} // Open the popup on press
             style={styles.imageButton}
           />
@@ -126,8 +126,10 @@ const styles = StyleSheet.create({
     right: 60,
   },
   imageButton: {
-    width: 50, // Adjust as needed
+    width: 70, // Adjust as needed
     height: 50, // Adjust as needed
+    
+
   },
   progressBarContainer: {
     position: "absolute",
@@ -156,7 +158,7 @@ const styles = StyleSheet.create({
   level1Btn: {
     position: "absolute", // Ensure this is absolutely positioned
     top: 10, // Adjust this value to fine-tune alignment with the button in the progress bar
-    left: "16.7%", // Adjust the horizontal alignment to match the first button
+    left: "19.7%", // Adjust the horizontal alignment to match the first button
     backgroundColor: "transparent", // Make sure there's no conflicting background
   },
 });
