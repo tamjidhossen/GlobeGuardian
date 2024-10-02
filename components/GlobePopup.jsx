@@ -78,49 +78,63 @@ export default function GlobePopup({ closePopup }) {
   const renderAtmospherePopup = () => (
     <View>
       <Text style={styles.title}>Atmosphere Data</Text>
-      <View style={styles.buttonRow}>
+      {/* Align all four buttons in a single row */}
+      <View style={styles.singleButtonRow}>
         <TouchableOpacity
           style={styles.prettyButton}
           onPress={() => console.log("Air Temperature pressed")}
         >
-          <Text style={styles.prettyButtonText}>Air Temperature</Text>
+          <Image
+            source={require("../assets/images/air-temp-btn.png")}
+            style={styles.buttonIcon}
+          />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.prettyButton}
           onPress={() => console.log("Clouds pressed")}
         >
-          <Text style={styles.prettyButtonText}>Clouds</Text>
+          <Image
+            source={require("../assets/images/clouds-btn.png")}
+            style={styles.buttonIcon}
+          />
         </TouchableOpacity>
-      </View>
-      <View style={styles.buttonRow}>
         <TouchableOpacity
           style={styles.prettyButton}
           onPress={() => setCurrentPopup("precipitation")}
         >
-          <Text style={styles.prettyButtonText}>Precipitation</Text>
+          <Image
+            source={require("../assets/images/precipitation-btn.png")}
+            style={styles.buttonIcon}
+          />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.prettyButton}
           onPress={() => console.log("Humidity pressed")}
         >
-          <Text style={styles.prettyButtonText}>Humidity</Text>
+          <Image
+            source={require("../assets/images/humidity-btn.png")}
+            style={styles.buttonIcon}
+          />
+        </TouchableOpacity>
+      </View>
+  
+      {/* Contribute to GLOBE Data button */}
+      <View style={styles.contributeButtonContainer}>
+        <TouchableOpacity
+          onPress={() => Linking.openURL("https://www.globe.gov/")}
+        >
+          <Image
+            source={require("../assets/images/contributation-to-globe-btn.png")}
+            style={styles.contributionBtn}
+          />
         </TouchableOpacity>
       </View>
 
-      {/* Contribute to GLOBE Data button */}
-      <TouchableOpacity
-        style={styles.contributeButton}
-        onPress={() => Linking.openURL("https://www.globe.gov/")}
-      >
-        <Icon name="globe" size={24} color="white" style={styles.globeIcon} />
-        <Text style={styles.contributeText}>Contribute to GLOBE</Text>
-      </TouchableOpacity>
-        
-        {/* Back button with an icon */}
+  
+      {/* Back button with an icon */}
       <TouchableOpacity onPress={handleBackToMain} style={styles.backButtonIcon}>
         <Icon name="arrow-left" size={20} color="#8B4513" />
       </TouchableOpacity>
-
     </View>
   );
 
@@ -251,6 +265,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     top: -10,
   },
+  buttonIcon:{
+    height:100,
+    width:100,
+  },
+  
   imageButton: {
     flex: 1,
     justifyContent: "center",
@@ -263,25 +282,45 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   // Pretty button styling for the smaller buttons like 'Precipitation'
+  singleButtonRow: {
+    flexDirection: "row",
+    justifyContent: "space-around", // Distributes buttons evenly
+    alignItems: "center",
+    width: "100%",
+    marginVertical: 20, // Adjust spacing as needed
+    paddingHorizontal: 5,
+  },
+
   prettyButton: {
     flex: 1,
-    backgroundColor: "#4CAF50", // Green button
-    paddingVertical: 15,
-    marginHorizontal: 10,
-    borderRadius: 20, // Rounded corners
+    backgroundColor: "transparent", // Button background color
+    
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 5, // For shadow on Android
+   
+    
   },
-  prettyButtonText: {
-    fontSize: 16,
-    color: "#fff", // White text
-    fontWeight: "bold",
+
+  // Adjusted button icon styling for a uniform size
+  buttonIcon: {
+    width: 100,
+    height: 100,
+    resizeMode: "contain",
   },
+
+  contributeButton: {
+    flexDirection: "row",
+    
+    
+    borderRadius: 50,
+    marginTop: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    width: width * 0.8,
+    borderColor: "white",
+    borderWidth: 4,
+  },
+
   backButtonIcon: {
     position: "absolute",
     top: -10,
@@ -298,18 +337,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  contributeButton: {
+  contributeButtonContainer: {
     flexDirection: "row",
-    backgroundColor: "#DE978F",
-    padding: 15,
-    borderRadius: 50,
-    marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
-    width: height * 0.85,
-    borderColor: "white",
-    borderWidth: 4,
+    marginVertical: 20,
   },
+  contributionBtn: {
+    height: 54,
+    width: 500,
+    resizeMode: "contain",
+  },
+
   contributeText: {
     color: "white",
     fontSize: 18,

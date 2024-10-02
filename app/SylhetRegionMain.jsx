@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react';
 import { router } from 'expo-router';
-import * as Font from 'expo-font';
 import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Animated, PanResponder,
     ImageBackground,
     ScrollView,
@@ -10,41 +9,13 @@ import { View, Text, Button, StyleSheet, Image, TouchableOpacity, Animated, PanR
 const screenWidth = Dimensions.get('window').width; // Get device width
 
 export default function Home() {
-  // const [fontLoaded, setFontLoaded] = useState(false);
-  // useEffect(() => {
-  //   async function loadFont() {
-  //     await Font.loadAsync({
-  //       'Kavoon-Regular': require('../assets/fonts/Kavoon-Regular.ttf'),
-  //     });
-  //     setFontLoaded(true);
-  //   }
 
-  //   loadFont();
-  // }, []);
-//   const [pan] = useState(new Animated.ValueXY());
-
-//   const panResponder = PanResponder.create({
-//     onMoveShouldSetPanResponder: () => true,
-//     onPanResponderGrant: () => {
-//       pan.setOffset({
-//         x: pan.x._value,
-//         y: pan.y._value,
-//       });
-//       pan.setValue({ x: 0, y: 0 });
-//     },
-//     onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], {
-//       useNativeDriver: false,
-//     }),
-//     onPanResponderRelease: () => {
-//       pan.flattenOffset();
-//     },
-//   });
   const [sidebarVisible, setSidebarVisible] = useState(false); // State for sidebar visibility
   const [sidebarAnim] = useState(new Animated.Value(-screenWidth)); // Sidebar starts off-screen
 
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
-      const toValue = sidebarVisible ? -screenWidth : 0; // If visible, slide out; if hidden, slide in
+      const toValue = sidebarVisible ? - screenWidth : 0; // If visible, slide out; if hidden, slide in
       Animated.timing(sidebarAnim, {
         toValue,
         duration: 300, // Animation duration
