@@ -115,10 +115,10 @@ export default function Home() {
           <Text style={styles.coinBoardText}>500</Text>
       </View>
       <View style={styles.assetButton}>
-        <TouchableOpacity onPress={toggleSidebar} style={styles.ImageButton}>
+        <TouchableOpacity onPress={toggleSidebar} style={styles.communityIcon}>
           <Image
             source={require('../assets/images/community-icon.png')}
-            style={styles.communityIcon}
+            
           />
         </TouchableOpacity>  
       </View>

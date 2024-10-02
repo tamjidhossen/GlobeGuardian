@@ -94,10 +94,10 @@ export default function VillageScreen() {
                   <Text style={styles.skipButtonText}>Skip</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => router.push('/dataShow')}>
+                <TouchableOpacity onPress={() => router.push('/dataShow') } style={styles.imageButton}>
                   <Image
                     source={require('../assets/images/nasaDataBtn.png')}
-                    style={styles.imageButton}
+                    
                   />
                 
                 </TouchableOpacity>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   imageButton: {
     top: 140,
-    left: 120,
+    left: 130,
   },
   cloudTransition: {
 
