@@ -10,7 +10,7 @@ export default function Index() {
     if (imageLoaded) {
       const timer = setTimeout(() => {
         router.push('/MapScreen');
-      }, 10000); // Adjust the timer to match GIF duration
+      }, 4000); // Adjust the timer to match GIF duration
 
       return () => clearTimeout(timer);
     }
@@ -20,7 +20,7 @@ export default function Index() {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Image
         source={require('../assets/gifs/loading-bar.gif')}
-        style={{ width: '105%', height: '105%' }}
+        style={{ width: '110%', height: '110%' }}
         onLoad={() => setImageLoaded(true)} // Wait until the GIF is fully loaded
       />
     </View>

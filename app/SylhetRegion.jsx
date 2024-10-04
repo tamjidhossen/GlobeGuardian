@@ -73,7 +73,7 @@ export default function VillageScreen() {
         <Modal
           transparent={true}
           visible={modalVisible}
-          animationType="instant"
+          animationType="fade"
           onRequestClose={() => setModalVisible(false)} // Required for Android back button
         >
           <View style={styles.modalOverlay}>
@@ -135,15 +135,15 @@ const styles = StyleSheet.create({
     padding: 20, // Adds padding around the content
   },
   messageText: {
-    fontSize: 15,
+    fontSize: 13,
     marginBottom: 20,
-    padding:15,
-    textAlign: 'left',
+    padding:8,
+    textAlign: 'auto',
     color: '#212', // Text color
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 38, // Position the buttons 10 pixels from the bottom of the modal
+    bottom: 34, // Position the buttons 10 pixels from the bottom of the modal
     right: -40, // Position the buttons 10 pixels from the right of the modal
     flexDirection: 'row',
     margin: 0,
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   nextButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14,
   },
   skipButton: {
     padding: 10,
@@ -163,11 +163,11 @@ const styles = StyleSheet.create({
   },
   skipButtonText: {
     color: '#542e31',
-    fontSize: 16,
+    fontSize: 14,
   },
   imageButton: {
-    top: 140,
-    left: 130,
+    top: 165,
+    left: 150,
   },
   cloudTransition: {
 

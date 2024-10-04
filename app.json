@@ -11,11 +11,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true
     },
@@ -26,7 +21,8 @@
       },
       "statusBar": {
         "hidden": true
-      }
+      },
+      "package": "com.tuhin1522.GlobeGuardian"
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +35,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2ae8d622-bf0a-4474-8ec6-b4be4a2dd628"
+      }
     }
   }
 }
