@@ -73,7 +73,7 @@ export default function VillageScreen() {
         <Modal
           transparent={true}
           visible={modalVisible}
-          animationType="fade"
+          animationType="instant"
           onRequestClose={() => setModalVisible(false)} // Required for Android back button
         >
           <View style={styles.modalOverlay}>

@@ -359,9 +359,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   chartImage: {
-    width: height * 0.7,
-    height: width * 0.6,
-    borderRadius: 100,
+    width: width * 0.7,
+    height: height * 0.6,
+    borderRadius: 30,
     alignItems: "center",
     position: "relative",
   },

@@ -159,12 +159,12 @@ const styles = StyleSheet.create({
     left: 160,
   },
   shopButton: {
-    bottom: -5,
-    left: 470,
+    bottom: -15,
+    left: 560,
     
   },
   progessBar:{
-    bottom: 272,
+    bottom: 309,
     right:170,
   },
   communityIcon:{
@@ -176,12 +176,12 @@ const styles = StyleSheet.create({
     top:10,
   },
   coinBoard:{
-    bottom:230,
-    left:400,
+    bottom:260,
+    left:490,
   },
   coinBoardText:{
-    bottom:295,
-    left:450,
+    bottom:330,
+    left:530,
     bold:true,
     fontSize:25,
     color:'#eee',

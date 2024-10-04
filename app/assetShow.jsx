@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   headerBar: {
     width: '100%',
-    height: 45,
+    height: 55,
     backgroundColor: '#402108', // Darker shade for the header
     justifyContent: 'center',
     alignItems: 'center',

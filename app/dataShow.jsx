@@ -15,7 +15,7 @@ export default function DataShow() {
     { id: "1", image: require("../assets/images/jan-sat-data.png") },
     { id: "2", image: require("../assets/images/feb-sat-data.png") },
     { id: "3", image: require("../assets/images/mar-sat-data.png") },
-    { id: "4", image: require("../assets/images/april-sat-data.png")},
+    { id: "4", image: require("../assets/images/april-sat-data.png") },
     { id: "5", image: require("../assets/images/may-sat-data.png") },
     { id: "6", image: require("../assets/images/june-sat-data.png") },
   ];
@@ -32,7 +32,7 @@ export default function DataShow() {
     <View
       style={[
         styles.itemContainer,
-        { height: currentIndex === index ? height / 2+50 : height / 2 },
+        { height: currentIndex === index ? height / 2 + 50 : height / 2 },
       ]}
     >
       <TouchableOpacity disabled={true} style={styles.imageWrapper}>
@@ -42,49 +42,58 @@ export default function DataShow() {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styles.flatListWrapper}>
-        <FlatList
-          ref={flatListRef}
-          data={data}
-          keyExtractor={(item) => item.id} // Ensure the key extractor uses the id
-          key = {data.length}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          onScroll={handleScroll}
-          renderItem={renderItem}
-        />
-      </View>
-
-      {/* Pagination Dots */}
-      <View style={styles.pagination}>
-        {data.map((_, index) => (
-          <View
-            key={index}
-            style={[
-              styles.dot,
-              {
-                width: currentIndex === index ? 40 : 8,
-                height: currentIndex === index ? 10 : 8,
-                backgroundColor: currentIndex === index ? "green" : "gray",
-              },
-            ]}
+    <ImageBackground
+      source={require('../assets/images/village-2.png')} // Add your background image here
+      style={styles.backgroundImage} // Ensure the image covers the entire screen
+    >
+      <View style={styles.container}>
+        <View style={styles.flatListWrapper}>
+          <FlatList
+            ref={flatListRef}
+            data={data}
+            keyExtractor={(item) => item.id} // Ensure the key extractor uses the id
+            key={data.length}
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            onScroll={handleScroll}
+            renderItem={renderItem}
           />
-        ))}
+        </View>
+
+        {/* Pagination Dots */}
+        <View style={styles.pagination}>
+          {data.map((_, index) => (
+            <View
+              key={index}
+              style={[
+                styles.dot,
+                {
+                  width: currentIndex === index ? 40 : 8,
+                  height: currentIndex === index ? 10 : 8,
+                  backgroundColor: currentIndex === index ? "green" : "gray",
+                },
+              ]}
+            />
+          ))}
+        </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1, // Ensures it covers the whole screen
+    resizeMode: 'cover', // Ensure the image covers the entire screen
+  },
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   flatListWrapper: {
-    height: height / 2 + 50,
+    height: height / 2 + 60,
     justifyContent: "center",
     alignItems: "center",
   },

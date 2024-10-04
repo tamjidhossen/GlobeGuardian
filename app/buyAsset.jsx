@@ -29,7 +29,7 @@ export default function WaterReservoirComponent() {
         {/* Positioning button below text */}
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.nasaButton}>
-            <Text style={styles.nasaButtonText}>Buy</Text>
+            <Text style={styles.nasaButtonText}>NASA's Data</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    width: 100,
+    width: 300,
     borderRadius: 12, // Rounded corners
     borderColor: '#8B4513',
     borderWidth: 2, // Border to add depth
