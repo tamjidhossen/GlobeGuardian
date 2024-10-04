@@ -1,4 +1,5 @@
-# Welcome to your Expo app 👋
+# Globe Guardian 🌍🛡  
+*NASA Space Apps Challenge 2024*
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
@@ -23,28 +24,48 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+# Project Details
+*NASA Space Apps Challenge 2024*
 
-When you're ready, run:
+Globe Guardian is a multiplayer educational game where players protect and strengthen regions in Bangladesh against natural disasters like floods using real NASA data. Through strategic planning, satellite insights, and community collaboration, the game teaches environmental resilience.
 
-```bash
-npm run reset-project
-```
+### Features:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- 🎮 Game Character:  
+  A customizable character that players can control to explore regions, collect resources, and help communities.  
+  ![Game Character](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%203%402x.png "Game Character Preview")
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+- 🌏 Interactive Map:  
+  Explore and unlock regions, starting with one, and fortify it against floods using real-time satellite data and predictions.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+  Country Map:  
+  ![Country Map](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%202%402x.png "Country Map Preview")
 
-## Join the community
+  Region Map:  
+  ![Region Map](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%201%402x.png "Region Map Preview")
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+- 📊 NASA Data:  
+   Learn and adapt using environmental data from the GLOBE Protocol and satellites like SENTINEL-1 SAR to prepare for disasters.  
+
+  ![NASA Data](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%204%402x.png "NASA Data Preview")
+
+- 🛠 Game Store:  
+  Purchase essential assets such as:
+
+  ![Store Assets](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%201.png "Store Assets Preview")
+
+
+
+- 🤝 Multiplayer & Collaboration:  
+  Chat with other communities, donate coins, share assets (like sandbags), and help build shared infrastructure like bridges and dams.  
+
+  <img src="https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%2064%404x.png" alt="Chat Preview" width="200px"/>
+
+*Developed by Team Cyborgs for NASA Space Apps Challenge 2024.*
+### Copyright Disclaimer:
+Some assets used in this game are sourced from [Freepik](https://www.freepik.com) and are royalty-free. NASA data is provided through the [GLOBE Protocol](https://www.globe.gov/) and includes satellite images from the [SAR satellites](https://earthobservatory.nasa.gov/features/SAR).
+
