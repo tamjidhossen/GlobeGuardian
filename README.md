@@ -52,6 +52,7 @@ Globe Guardian is a multiplayer educational game where players protect and stren
    Learn and adapt using environmental data from the GLOBE Protocol and satellites like SENTINEL-1 SAR to prepare for disasters.  
 
   ![NASA Data](https://github.com/tamjidhossen/GlobeGuardian/blob/e39b6a972d179d126819a9a9c31b0e6ac3cd0563/assets/Asset%204%402x.png "NASA Data Preview")
+  ![NASA Data](https://github.com/tamjidhossen/GlobeGuardian/blob/d1c3e83a77e9f5f459718b416e63600eeacd881d/assets/Asset%206data%20popups.png "NASA Data Preview")
 
 - 🛠 Game Store:  
   Purchase essential assets such as:
